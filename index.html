@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
 
-        <title>Template for lecture slides</title>
+        <title>Open Source Approach to Urban Growth Simulation</title>
 
         <meta name="description" content="Template for lecture slides of NCSU OSGeoREL courses">
         <meta name="author" content="Vaclav Petras">
@@ -161,7 +161,7 @@
             <!-- Any section element inside of this container is displayed as a slide -->
             <div class="slides">
 <section data-background-image="img/title.jpg">
-    <h3>Open Source Approach to Urban Growth Simulation </h3>
+    <h3>Open Source Approach to Urban Growth Simulation</h3>
     <p style="margin-top: 1em">
         Anna Petrasova, Vaclav Petras, Derek Van Berkel, Brendan Harmon, Helena Mitasova and Ross Meentemeyer</p>
     <p class="title-foot">
@@ -174,18 +174,34 @@
 <section>
 <h3>Urbanization</h3>
 <img width="70%" src="img/atlanta.png">
-<!-- Cities all over the world are experiencing urban sprawl. Here is a comparison
-of Atlanta Metropolitan region and Barcelona metr. region, both have similar population
-but are growing differently for different geographical and socio-economic reasons -->
+
+<aside class="notes">
+As population is growing, cities all over the world experience rapid urban growth and urban sprawl,
+which we can describe as an uncontrolled and unplanned expansion into rural areas.
+Here is just an example of 2 expanding cities Atlanta Metropolitan region on the right
+and Barcelona metropolitan region on the left, both have similar population
+but are growing very differently for different geographical and socio-economic reasons.
+</aside>
 </section>
+
+
 <section>
 <h3>Urban growth models</h3>
 simulating the future scenarios
 <img width="90%" src="img/effects.png">
-<!-- The way how cities grow affects the environment and peoples lifes and health and so it's important to understand
-what will the future urbanization mean in terms of water quality, deforestation and other adverse effects.
-This is where urban simulations and land change models can help us. By varying scenarios -->
+
+<aside class="notes">
+The way how cities grow affects the environment and peoples lifes and health,
+so it is important to understand what will the future urbanization mean
+in terms of water quality, deforestation, or biodiversity.
+This is where urban simulations and land change models can help us.
+With urban simulations we can look at possible future developments by 
+incorporating scenarios in the modeling and in this way we can analyze
+the consequences of the different decisions or events.
+</aside>
 </section>
+
+
 <section>
 <h3>Urban growth models: challenges</h3>
 Can we understand the behavior of the model?
@@ -193,9 +209,20 @@ Can we understand the behavior of the model?
 Can we make sure it is working as described?
 <p>
 <img width="90%" src="img/blackbox.png">
-<!-- provides little explanatory insight into the relative
-influence of the independent variables in the prediction process.  -->
+
+<aside class="notes">
+There are numerous challenges for the urban growth and land change models,
+one of them is that the algorithms are often black boxes.
+Black box here can mean that the model provides little explanatory
+insight into the influence of the independent variables 
+in the prediction process.
+Also many published models do not provide their software implementation,
+so all possible problems are hidden and the models algorithms
+cannot be adjusted when applied to different study system.
+</aside>
 </section>
+
+
 <section>
 <h2>FUTURES</h2>
 FUTure Urban-Regional Environment Simulation
@@ -206,22 +233,50 @@ FUTure Urban-Regional Environment Simulation
 <li style="margin: 10px">positive feedbacks (new development <br/>attracts more development)</li>
 <li style="margin: 10px">allows spatial non-stationarity</li>
 </ul>
+
+<aside class="notes">
+    This is where I want to start to talk about FUTURES
+    which stands for FUTure Urban-Regional Environment Simulation.
+    FUTURES was originally developed by Dr. Meentemeyer's group to study spatial
+    pattern of urbanization in the United States on regional scale.
+    FUTURES ...
+</aside>
 </section>
 
 
 <section class="textimg">
-<h2>FUTURES</h2>
+<h2>FUTURES highlights</h2>
 <ul style="max-width:31% !important">
-<li style="margin: 20px">open source (+&nbsp;dependencies)</li>
+<li style="margin: 20px">realistic spatial pattern</li>
 <li style="margin: 20px">modular</li>
 <li style="margin: 20px">transparent</li>
+<li style="margin: 20px">open source (+&nbsp;dependencies)</li>
 </ul>
 <img style="max-width:60% !important" src="img/schema.png">
+
+<aside class="notes">
+FUTURES stands out because it can model realistic spatial patterns,
+is modular and makes the modeling transparent thanks
+to its new open source implementation.
+</aside>
 </section>
+
+
+<!-- <section>
+uncomment this slide before printing and then remove it from PDF
+</section> -->
 
 
 <section>
 <img src="img/schema.png">
+
+<aside class="notes">
+This is a basic schema of FUTURES, where the modeling framework is
+based on 3 components: POTENTIAL submodel providing the information
+where will urbanization likely happen, the DEMAND specifies how much
+land will be developed and the third component PGA (meaning Patch Growing Algorithm)
+is the actual engine of FUTURES, growing the patches of calibrated size and shape.
+</aside>
 </section>
 
 
@@ -235,6 +290,7 @@ in different counties)</li>
 </ul>
 </section>
 
+
 <section class="textimg">
 <h2>DEMAND</h2>
 <ul>
@@ -245,6 +301,12 @@ each subregion</li>
 </ul>
 <img src="img/demand.png">
 </section>
+
+
+<!-- <section>
+uncomment this slide before printing and then remove it from PDF
+</section> -->
+
 
 <section class="textimg">
 <h2>PGA</h2>
@@ -257,20 +319,44 @@ derived from historical data</li>
 <img src="img/PGA.gif">
 </section>
 
+
+<!-- <section>
+uncomment this slide before printing and then remove it from PDF
+</section> -->
+
+
 <section>
-<h3>Open source FUTURES</h3>
-To go beyond experimental prototype<br/> we needed to make FUTURES:
+<h2>Open source FUTURES</h2>
+<p style="text-align: left">To go beyond experimental prototype we needed to make FUTURES:
 <ul style="margin-top:1em">
 <li>more efficient and scalable</li>
-<li>as easy to use as possible for a wider audience </li>
+<li>as easy to use as possible for a wider audience</li>
 <li>open source and maintainable in the long run</li>
 </ul>
-<p>&#8658; new FUTURES GRASS GIS add-on <a href="https://grass.osgeo.org/grass70/manuals/addons/r.futures.html">r.futures</a>
+<p>&#8658; new FUTURES GRASS GIS add-on
+     <a href="https://grass.osgeo.org/grass70/manuals/addons/r.futures.html">r.futures</a>
+
+<aside class="notes">
+The original implementation of FUTURES was a research prototype
+which couldn't be effectively shared with the land change community
+because it was difficult to run it and didn't scale very well.
+So we decided to go beyond this prototype. We made the model
+simpler to run so that all our colleagues and also wider audience
+can use it in their research without extensive training.
+With the goal to study large-scale urbanization in high detail
+we made the model more efficient and parallelized.
+We don't share just binaries but we made the model
+fully open source and implemented it in GRASS GIS, a stable, powerful 
+geospatial platform to ensure the model is available and maintained
+and can be used by the community even if the original
+authors cannot support it for lack of funding for example.
+</aside>
 </section>
+
 
 <section>
 <h3>Why GRASS GIS?</h3>
-For model developers:
+<p style="text-align: left">For model developers:
 <ul>
 <li style="margin: 10px">modular architecture: modules in C/C++ and Python</li>
 <li style="margin: 10px">all needed GIS functions at hand</li>
@@ -282,21 +368,24 @@ For model developers:
 FCE CTU in Prague)</li>
 <li style="margin: 10px">maintained by community and developers</li>
 </ul>
+
+<aside class="notes">
+
+</aside>
 </section>
 
 <section>
 <h3>Why GRASS GIS?</h3>
-For model users:
+<p style="text-align: left">For model users:
 <ul style="margin-top:1em">
 <li style="margin: 10px">multiplatform</li>
 <li style="margin: 10px">graphical user interface</li>
 <li style="margin: 10px">scriptable (Bash, Python, R)</li>
 <li style="margin: 10px">easy installation:
-easy installation:
     <pre><code data-trim data-noescape>
          > g.extension r.futures
    </code></pre></li>
-   <li style="margin: 10px">easy installation:
+   <li style="margin: 10px">
 available suite of tools for further analyses and visualization
     (spatio-temporal analyses, animations)</li>
 </ul>
@@ -397,6 +486,7 @@ among ecosystem services</a></em>.</li>
             // Full list of configuration options available here:
             // https://github.com/hakimel/reveal.js#configuration
             Reveal.initialize({
+                showNotes: false,
                 // Display controls in the bottom right corner
                 controls: false,
 
@@ -487,18 +577,9 @@ among ecosystem services</a></em>.</li>
                     { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
                     { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
                     { src: 'plugin/math/math.js', async: true },
-                ],
-
-                math: {
-                    mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
-                    config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
-                }
+                ]
             });
 
         </script>
-        <script type="text/javascript"
-    src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
     </body>
 </html>
