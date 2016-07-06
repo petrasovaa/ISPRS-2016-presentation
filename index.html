@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<!-- This is a generated file. Do not edit. -->
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Template for lecture slides</title>
+
+        <meta name="description" content="Template for lecture slides of NCSU OSGeoREL courses">
+        <meta name="author" content="Vaclav Petras">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <style>
+        body {
+        /*background-color: #FFF !important;*/
+        /*
+          background-image: url("pictures/elevation-nagshead.gif");
+          background-repeat: no-repeat;
+          background-position: left bottom;*/
+        }
+        .reveal section img {
+            background: transparent;
+            border: 0;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0.15);
+        }
+        /* for standalone frame */
+        /*
+        iframe {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        */
+        /* display: inline; background-color: #002B36; padding: 0px; margin: 0px */
+        .rounded-corners {
+            border: 0px solid black;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -khtml-border-radius: 5px;
+            -webkit-border-radius: 5px;
+        }
+        a {
+            color: #060 !important;
+        }
+        a:hover {
+            color: #060 !important;
+            text-decoration: underline !important;
+        }
+        h1, h2, h3, h4, h5 {
+            text-transform: none !important;
+            /* word-break: keep-all; text-transform: none; font-size: 200%; line-height: 110%; */
+            color: #060 !important;
+            /* color: #444 !important; */ /* grey from the wab page */
+            font-weight: bold !important;
+            -webkit-hyphens: none !important;
+            -moz-hyphens: none !important;
+            -ms-hyphens: none !important;
+            hyphens: none !important;
+            line-height: 110% !important;
+        }
+        .reveal .progress span {
+            background-color: #060 !important;
+        }
+        /* predefined element positioning */
+        .top {
+            /*position: relative;*/
+            top: 5%;
+            height: 45%; /* is the height even needed? */
+        }
+        .bottom {
+            height: 45%;
+        }
+        .ne {
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            height: 45%;
+            width: 45%;
+        }
+        .nw {
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            height: 45%;
+            width: 45%;
+        }
+        .se {
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
+            height: 45%;
+            width: 45%;
+        }
+        .sw {
+            position: absolute;
+            bottom: 5%;
+            left: 5%;
+            height: 45%;
+            width: 45%;
+        }
+
+        /* classes for sections with predefined elements */
+        /* using !important because, reveal styles are applied afterwards  */
+        .right, .textimg > img, .textimg > video, .textimg > iframe, .imgtext > p, .imgtext > ul, .imgtext > ol, .imgtext > div {
+            float: right;
+            text-align: left;
+            max-width: 47% !important;
+        }
+        .left, .imgtext > img, .imgtext > video, imgtext > iframe, .textimg > p, .textimg > ul, .textimg > ol, .textimg > div {
+            float: left;
+            text-align: left;
+            max-width: 47% !important;
+        }
+        li > ul, li > ol {
+            font-size: 85% !important;
+            line-height: 110% !important;
+        }
+        .small {
+            font-size: smaller !important;
+            color: gray;
+            margin: 0.1em !important;
+        }
+        .credit {
+            font-size: small !important;
+            color: gray;
+            margin: 0.1em !important;
+        }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+<section data-background-image="img/title.jpg">
+    <h3>Open Source Approach to Urban Growth Simulation </h3>
+    <p style="margin-top: 1em">
+        Anna Petrasova, Vaclav Petras, Derek Van Berkel, Brendan Harmon, Helena Mitasova and Ross Meentemeyer</p>
+    <p class="title-foot">
+        Center for Geospatial Analytics at North Carolina State University
+        <br>
+    </p>
+    <p>July 2016</p>
+</section>
+<!-- This is a generated file. Do not edit. -->
+<section>
+<h3>Urbanization</h3>
+<img width="70%" src="img/atlanta.png">
+<!-- Cities all over the world are experiencing urban sprawl. Here is a comparison
+of Atlanta Metropolitan region and Barcelona metr. region, both have similar population
+but are growing differently for different geographical and socio-economic reasons -->
+</section>
+<section>
+<h3>Urban growth models</h3>
+simulating the future scenarios
+<img width="90%" src="img/effects.png">
+<!-- The way how cities grow affects the environment and peoples lifes and health and so it's important to understand
+what will the future urbanization mean in terms of water quality, deforestation and other adverse effects.
+This is where urban simulations and land change models can help us. By varying scenarios -->
+</section>
+<section>
+<h3>Urban growth models: challenges</h3>
+Can we understand the behavior of the model?
+<br/>
+Can we make sure it is working as described?
+<p>
+<img width="90%" src="img/blackbox.png">
+<!-- provides little explanatory insight into the relative
+influence of the independent variables in the prediction process.  -->
+</section>
+<section>
+<h2>FUTURES</h2>
+FUTure Urban-Regional Environment Simulation
+<ul>
+<li style="margin: 10px">stochastic, patch-based land change model</li>
+<li style="margin: 10px">simulates urban growth</li>
+<li style="margin: 10px">accounts for location, quantity,<br/> and pattern of change</li>
+<li style="margin: 10px">positive feedbacks (new development <br/>attracts more development)</li>
+<li style="margin: 10px">allows spatial non-stationarity</li>
+</ul>
+</section>
+
+
+<section class="textimg">
+<h2>FUTURES</h2>
+<ul style="max-width:31% !important">
+<li style="margin: 20px">open source (+&nbsp;dependencies)</li>
+<li style="margin: 20px">modular</li>
+<li style="margin: 20px">transparent</li>
+</ul>
+<img style="max-width:60% !important" src="img/schema.png">
+</section>
+
+
+<section>
+<img src="img/schema.png">
+</section>
+
+
+<section>
+<h2>POTENTIAL</h2>
+<ul>
+<li>multilevel logistic regression for development suitability
+accounts for variation among subregions (for example policies
+in different counties)</li>
+<li>inputs are uncorrelated predictors (distance to roads and development, slope, ...)</li>
+</ul>
+</section>
+
+<section class="textimg">
+<h2>DEMAND</h2>
+<ul>
+<li>estimates the rate of per capita land consumption for
+each subregion</li>
+<li>extrapolates between historical changes in population and land conversion</li>
+<li>inputs are historical landuse, population data, population projection</li>
+</ul>
+<img src="img/demand.png">
+</section>
+
+<section class="textimg">
+<h2>PGA</h2>
+<ul>
+<li>stochastic algorithm</li>
+<li>converts land in discrete patches</li>
+<li>inputs are patch characteristics (distribution of patch sizes and compactness)
+derived from historical data</li>
+</ul>
+<img src="img/PGA.gif">
+</section>
+
+<section>
+<h3>Open source FUTURES</h3>
+To go beyond experimental prototype<br/> we needed to make FUTURES:
+<ul style="margin-top:1em">
+<li>more efficient and scalable</li>
+<li>as easy to use as possible for a wider audience </li>
+<li>open source and maintainable in the long run</li>
+</ul>
+<p>&#8658; new FUTURES GRASS GIS add-on <a href="https://grass.osgeo.org/grass70/manuals/addons/r.futures.html">r.futures</a>
+</section>
+
+<section>
+<h3>Why GRASS GIS?</h3>
+For model developers:
+<ul>
+<li style="margin: 10px">modular architecture: modules in C/C++ and Python</li>
+<li style="margin: 10px">all needed GIS functions at hand</li>
+<li style="margin: 10px">efficient I/O libraries</li>
+<li style="margin: 10px">able to process large datasets</li>
+<li style="margin: 10px">automatically generated CLI and GUI</li>
+<li style="margin: 10px">infrastructure for online manual pages</li>
+<li style="margin: 10px">daily compiled binaries for Windows<br/> (thanks to M. Landa,
+FCE CTU in Prague)</li>
+<li style="margin: 10px">maintained by community and developers</li>
+</ul>
+</section>
+
+<section>
+<h3>Why GRASS GIS?</h3>
+For model users:
+<ul style="margin-top:1em">
+<li style="margin: 10px">multiplatform</li>
+<li style="margin: 10px">graphical user interface</li>
+<li style="margin: 10px">scriptable (Bash, Python, R)</li>
+<li style="margin: 10px">easy installation:
+easy installation:
+    <pre><code data-trim data-noescape>
+         > g.extension r.futures
+   </code></pre></li>
+   <li style="margin: 10px">easy installation:
+available suite of tools for further analyses and visualization
+    (spatio-temporal analyses, animations)</li>
+</ul>
+</section>
+
+<section>
+<h3>r.futures</h3>
+<img src="img/grass_futures_diagram.png">
+</section>
+
+<section>
+<h3>r.futures: GUI</h3>
+<img src="img/GUI.gif">
+</section>
+<section>
+<h3>r.futures: CLI</h3>
+<pre><code data-trim data-noescape>
+r.futures.pga -s subregions=counties developed=urban_2011 \
+   output=final demand=demand.csv discount_factor=0.1 compactness_mean=0.1 \
+   predictors=road_dens_perc,forest_smooth_perc,dist_to_water_km,dist_to_protected_km \
+   devpot_params=potential.csv development_pressure=devpressure_0_5 \
+   n_dev_neighbourhood=30 gamma=0.5 patch_sizes=patches.txt num_neighbors=4 output=final
+ </code></pre>
+</section>
+
+<section>
+<h3>r.futures: TUI</h3>
+TUI: Tangible User Interface
+<img src="img/TUI.jpg">
+</section>
+
+<section>
+<h3>Tangible Landscape</h3>
+<img width="55%" src="img/system_schema.png">
+<p style="font-size:70%">
+Tangible Landscape couples a digital and a physical model through a continuous cycle of 3D scanning, geospatial modeling, and projection
+<!-- Tangible Landscape is designed to make scientific data, models, and simulations exploratory, engaging, and fun -->
+</section>
+<section>
+<h3>Tangible Landscape: applications</h3>
+<img width="85%" src="img/TL_applications.png">
+</section>
+
+<section>
+<!-- <section data-background-video="video/TL_FUTURES.mp4"> -->
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/SeBoGwSqmRM?rel=0" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="1280" height="720" src="https://www.youtube.com/embed/SeBoGwSqmRM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe> -->
+</section>
+
+<section>
+<h3>FUTURES: tutorials</h3>
+
+<ul>
+<li><a href="http://fatra.cnr.ncsu.edu/futures/FUTURES_triangle.zip">Sample dataset</a> for North Carolina</li>
+<li><a href="https://grasswiki.osgeo.org/wiki/FUTURES_tutorial">
+Tutorial</a> for Triangle (Raleigh, Durham, Chapel Hill) on GRASS GIS Wiki</li>
+<li><a href="https://grasswiki.osgeo.org/wiki/Workshop_on_urban_growth_modeling_with_FUTURES">
+Detailed workshop material</a> for Asheville, NC on GRASS GIS Wiki</li>
+
+<li>r.futures<a href="https://grass.osgeo.org/grass70/manuals/addons/r.futures.html"> manual pages</a></li>
+</ul>
+
+</section>
+
+<section>
+<h3>FUTURES: references</h3>
+
+<ul style="font-size:70%">
+<li style="margin: 20px">Meentemeyer, R. K., Tang, W., Dorning, M. A., Vogler, J. B.,
+Cunniffe, N. J. and Shoemaker, D. A., 2013. <em><a>FUTURES: Multilevel
+Simulations of Emerging UrbanRural Landscape Structure
+Using a Stochastic Patch-Growing Algorithm</a></em>. Annals of the Association
+of American Geographers 103(4), pp. 785–807.</li>
+<li style="margin: 20px">Dorning, M. A., Koch, J., Shoemaker, D. A. and Meentemeyer,
+R. K., 2015. <em><a>Simulating urbanization scenarios reveals tradeoffs
+between conservation planning strategies</a></em>. Landscape and Urban
+Planning 136, pp. 28–39.</li>
+<li style="margin: 20px">Pickard, B. R., Van Berkel, D., Petrasova, A. and Meentemeyer,
+R. K., in prep. <em><a>Future patterns of urbanization reveal trade-offs
+among ecosystem services</a></em>.</li>
+<li style="margin: 20px">Petrasova, A., Petras, V., Van Berkel, D., Harmon, B. A., Mitasova, H., and Meentemeyer, R. K., 2016.
+     <em><a>Open Source Approach to Urban Growth Simulation</a></em>.
+     Int. Arch. Photogramm. Remote Sens. Spatial Inf. Sci., XLI-B7, 953-959.
+</ul>
+</section>
+<section>
+    <h2>Thank you!</h2>
+</section>
+<!-- This is a generated file. Do not edit. -->
+        </div>  <!-- slides -->
+
+    </div>  <!-- reveal -->
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                // Display controls in the bottom right corner
+                controls: false,
+
+                // Display a presentation progress bar
+                progress: true,
+                
+                center: true,
+                
+                // Display the page number of the current slide
+                slideNumber: false,
+
+                // Enable the slide overview mode
+                overview: true,
+
+                // Turns fragments on and off globally
+                fragments: true,
+
+                // The "normal" size of the presentation, aspect ratio will be preserved
+                // when the presentation is scaled to fit different resolutions. Can be
+                // specified using percentage units.
+                // width: 960,
+                // height: 700,
+                
+                // Factor of the display size that should remain empty around the content
+                margin: 0.05,  // increase?
+
+                // Bounds for smallest/largest possible scale to apply to content
+                minScale: 0.5,
+                maxScale: 5.0,
+
+                theme: Reveal.getQueryHash().theme,  // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Push each slide change to the browser history
+                history: true,
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
+
+                // Vertical centering of slides
+                center: true,
+
+                // Enables touch navigation on devices with touch input
+                touch: true,
+
+                // Loop the presentation
+                loop: false,
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
+
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
+
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
+
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
+
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
+
+                // Opens links in an iframe preview overlay
+                previewLinks: false,
+
+                // Transition speed
+                transitionSpeed: 'default', // default/fast/slow
+
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'none', // default/none/slide/concave/convex/zoom
+
+                // Number of slides away from the current that are visible
+                viewDistance: 3,
+
+                // Parallax background image
+                //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+                // Parallax background size
+                //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/math/math.js', async: true },
+                ],
+
+                math: {
+                    mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+                    config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+                }
+            });
+
+        </script>
+        <script type="text/javascript"
+    src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+    </body>
+</html>
